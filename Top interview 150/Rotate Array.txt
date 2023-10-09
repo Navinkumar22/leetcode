@@ -41,7 +41,5 @@ class Solution(object):
     def rotate(self, nums, k):
         i=0
         l=len(nums)
-        while(i<k):
-            nums.insert(0,nums[-1])
-            nums.pop(l)
-            i+=1
+        k%=l
+        nums[:]=nums[-k:]+nums[:-k]
